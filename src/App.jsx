@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
-import './App.css'; // Import custom CSS for styling
+import './App.css'; 
 
 function App() {
   const [activeTab, setActiveTab] = useState('overview'); // Default active tab
@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="app-container">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      
       <Content activeTab={activeTab} />
     </div>
   );

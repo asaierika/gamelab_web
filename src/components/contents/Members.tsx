@@ -4,7 +4,7 @@ const Members = () => {
   return (
     <div>
       <div className="heading">Members</div>
-      <div>
+      <div className="fade-in">
         Our members are the heart and soul of GameLab. Comprising a diverse
         group of students from various backgrounds and skill levels, we welcome:
         Aspiring Game Designers: Those with a passion for creating unique game

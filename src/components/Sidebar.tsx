@@ -1,5 +1,5 @@
-// src/Sidebar.js
 import React from "react";
+import logo from "/logo.png";
 
 interface Props {
   activeTab: any;
@@ -33,13 +33,10 @@ const Sidebar = ({ activeTab, setActiveTab }: Props) => {
       >
         Awards
       </button>
-      <button
-        className={activeTab === "joinUs" ? "active" : ""}
-        onClick={() => setActiveTab("joinUs")}
-      >
-        Join us
-      </button>
-      {/* Add more tabs as needed */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+        <img src={logo} style={{ width: "10rem", padding: "2rem 0 0 0" }}></img>
+        <button>ig</button>
+      </div>
     </div>
   );
 };
