@@ -1,8 +1,8 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AppContext } from "../../AppContext.tsx";
 
 const Overview = () => {
-  const [isFaqShown, setIsFaqShown] = useState(false);
+  const { isFaqShown, setIsFaqShown } = useContext(AppContext);
   const [isClicked, setIsClicked] = useState(false);
   const questions = [
     "When was GameLab founded?",

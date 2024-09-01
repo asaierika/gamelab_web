@@ -19,9 +19,6 @@ const Content = ({ activeTab }: Props) => {
         {activeTab === "awards" && <Awards></Awards>}
         {activeTab === "joinUs" && <div>Settings Page Content Here.</div>}
       </div>
-      <div className="name-card-container">
-        <NameCard></NameCard>
-      </div>
     </div>
   );
 };

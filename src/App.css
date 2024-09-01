@@ -189,3 +189,40 @@ body {
 .fade-in {
   animation:fadeIn 1s ease;
 }
+
+.role-container {
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+  overflow:hidden;
+}
+
+.role button{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white; 
+  padding: 10px; 
+  margin: 0rem 1rem 1rem 0rem;
+  width:10rem;
+  height:10rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.541);
+}
+
+.role button:hover {
+  background-color: rgba(104, 74, 126, 0.702); 
+  border-color: #f1c9ff;
+}
+
+.role button.active {
+  background-color: rgba(104, 74, 126, 0.702); 
+  border-color: #f1c9ff;
+}
+
+.role img {
+  width:90%;
+  height:auto;
+}
