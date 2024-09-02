@@ -98,24 +98,69 @@ body {
   color: white; 
   padding: 10px; 
   margin: 0rem 1rem 1rem 0rem;
-  width:30%;
-  height:15vh;
-  border-radius: 1rem;
+  width:28rem;
+  height:9rem;
+  min-width: 28rem;
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.541);
+  border-radius: 1rem;
+  border-color: #f1c9ff62;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .name-card {
   display: flex;
+  flex-direction: column;
   justify-content: start;
   align-content: center;
   padding: 1rem;
+  gap:1rem;
+  font-family: "SGK075";
+  font-size: 1.5rem;
+}
+
+.name-card-info {
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap:1rem;
+  line-height: 1.5rem;
+}
+
+.name-card-roles {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:0.5rem;
+}
+
+.name-card-role {
+  width:5.5rem;
+  height:1rem;
+  font-size:1rem;
+  padding:0.2rem;
+  border-radius: 0.5rem;
+  background-color: #3f253d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .avatar {
-  width:10vh;
-  height:10vh;
-  background-color: white;
+  width:5rem;
+  height:5rem;
+  background-color: #f1c9ff0f;
   margin: 0 1rem;
+  border-color: #f1c9ff3b;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.avatar img {
+  width:100%;
+  height:auto;
 }
 
 .faq {
@@ -202,18 +247,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; 
+  gap:0.5rem;
+  font-family:"SGK075";
+  font-size:1.5rem;
   background-color: rgba(0, 0, 0, 0.5); 
   color: white; 
   padding: 10px; 
-  margin: 0rem 1rem 1rem 0rem;
-  width:10rem;
-  height:10rem;
+  margin: 0.5rem;
+  width:13rem;
+  height:13rem;
   border-radius: 1rem;
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.541);
 }
 
 .role button:hover {
-  background-color: rgba(104, 74, 126, 0.702); 
+  /* background-color: rgba(104, 74, 126, 0.702);  */
   border-color: #f1c9ff;
 }
 
@@ -223,6 +271,36 @@ body {
 }
 
 .role img {
-  width:90%;
+  width:50%;
   height:auto;
+}
+
+.convo-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap:0rem;
+  margin:0rem;
+}
+
+.convo-container img{
+  width:15rem;
+  height:15rem;
+}
+
+.convo-bubble {
+  background-color: rgba(52, 44, 51, 0.5); 
+  border-radius: 2rem;
+  border-color: #49424c;
+  border-style: solid;
+  border-width: 1px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:10rem;
+  font-size: 1.2rem;
+  font-family: "SGK075";
+  line-height: 1rem;
+  padding:0.7rem;
 }

@@ -26,13 +26,13 @@ const Overview = () => {
     <div>
       <div className="heading">Overview</div>
       <div className="content-text-box fade-in">
-        GameLab is an engaging and dynamic school-based interest group dedicated
-        to the art and science of game development. Established and driven by
-        passionate student game developers, GameLab serves as a creative hub
-        where students can collaborate, innovate, and turn their game ideas into
-        reality. Our mission is to foster a vibrant community of aspiring game
-        developers and provide them with the resources, support, and
-        opportunities to thrive in the world of game design and development.
+        <b>GameLab</b> is an engaging and dynamic school-based interest group
+        dedicated to the art and science of game development. Established and
+        driven by passionate student game developers, GameLab serves as a
+        creative hub where students can collaborate, innovate, and turn their
+        game ideas into reality. Our mission is to foster a vibrant community of
+        aspiring game developers and provide them with the resources, support,
+        and opportunities to thrive in the world of game design and development.
       </div>
       {isFaqShown ? (
         <div className="faq">
@@ -46,10 +46,17 @@ const Overview = () => {
       ) : (
         <div
           className={isClicked ? "move-right" : ""}
-          style={{ marginTop: "5rem" }}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignContent: "center",
+          }}
           onClick={handleClick}
         >
-          <div className="avatar"></div>
+          <div className="convo-container">
+            <img src={"/images/purple-cat.png"}></img>
+            <div className="convo-bubble">Wanna find out more?</div>
+          </div>
         </div>
       )}
     </div>
