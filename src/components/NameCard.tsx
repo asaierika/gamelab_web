@@ -10,10 +10,12 @@ const NameCard = () => {
     isNameCardActive,
     setIsNameCardActive,
     name,
+    setName,
     selectedRoles,
     avatar,
     level,
   } = useContext(AppContext);
+  const [inputValue, setInputValue] = useState(name);
 
   const handleJoin = () => {
     setIsNameCardActive(true);
@@ -21,6 +23,11 @@ const NameCard = () => {
 
   const handleCancel = () => {
     setIsNameCardActive(false);
+  };
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+    setName(event.target.value);
   };
 
   const handleSubmit = () => {
@@ -45,7 +52,12 @@ const NameCard = () => {
           <img src={avatar}></img>
         </div>
         <div className="name-card-info">
-          <div style={{ fontSize: "2rem" }}>{name}</div>
+          <input
+            className="default-input"
+            style={{ fontSize: "2rem" }}
+            value={inputValue}
+            onChange={handleChange}
+          ></input>
           <div>Lv.{level}</div>
         </div>
       </div>

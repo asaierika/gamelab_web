@@ -23,6 +23,50 @@ body {
   font-weight:lighter;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background-color: rgb(0, 0, 0); 
+  z-index: 100; 
+}
+
+.title {
+  font-family: "SGK075";
+  color:white;
+  font-size: 2rem;
+}
+
+.title input {
+  background-color: transparent;
+  border: none; /* Remove all borders */
+  border-bottom: 1px solid #ffffff; /* Bottom border */
+  outline: none; /* Remove default outline on focus */
+  color:white;
+  font-family: "SGK075";
+  text-align: center;
+  font-size: 2rem;
+}
+
+.default-input {
+  background-color: transparent;
+  border: none; 
+  border-bottom: 1px solid #ffffff; 
+  outline: none; 
+  color:white;
+  font-family: "SGK075";
+  text-align: center;
+  font-size: 2rem;
+  width:10rem;
+}
+
+.title img{
+  width:10rem;
+  height:auto;
+}
+
 .app-container {
   display: flex;
   width: 100%;
@@ -282,7 +326,7 @@ body {
 
 
 .fade-out {
-  animation: fadeOut 0.5s ease;
+  animation: fadeOut 0.5s ease forwards;
 }
 
 .fade-in-fade-out {

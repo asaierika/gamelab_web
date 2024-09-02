@@ -7,7 +7,6 @@ const HintBox = () => {
 
   useEffect(() => {
     if (hint !== "") {
-      //   setAnimationClass("transparent");
       setAnimationClass("fade-in-fade-out");
 
       const timer = setTimeout(() => {

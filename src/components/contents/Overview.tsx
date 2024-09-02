@@ -42,7 +42,7 @@ const Overview = () => {
       {isFaqShown ? (
         <div className="faq">
           {questions.map((question, i) => (
-            <div className="faq-child">
+            <div key={question} className="faq-child">
               <div style={{ fontWeight: "bold" }}>{question}</div>
               <div>{answers[i]}</div>
             </div>
