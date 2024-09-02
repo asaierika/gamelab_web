@@ -20,7 +20,7 @@ const Overview = () => {
 
   const handleClick = () => {
     setIsClicked(true);
-    setTimeout(() => setIsFaqShown(true), 1000);
+    setTimeout(() => setIsFaqShown(true), 500);
   };
   return (
     <div>
@@ -45,18 +45,20 @@ const Overview = () => {
         </div>
       ) : (
         <div
-          className={isClicked ? "move-right" : ""}
+          className={isClicked ? "fade-out" : ""}
           style={{
+            width: "100%",
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
-            alignContent: "center",
+            alignItems: "center",
           }}
-          onClick={handleClick}
         >
-          <div className="convo-container">
-            <img src={"/images/purple-cat.png"}></img>
-            <div className="convo-bubble">Wanna find out more?</div>
-          </div>
+          <img className="char-image" src={"/images/purple-cat-q.png"}></img>
+
+          <button className="dark-button" onClick={handleClick}>
+            More questions?
+          </button>
         </div>
       )}
     </div>

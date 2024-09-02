@@ -1,6 +1,8 @@
 import React, { createContext, useState, ReactNode } from "react";
 
 interface AppContextType {
+  isNameCardActive: boolean;
+  setIsNameCardActive: (value: boolean) => void;
   avatar: string;
   setAvatar: (value: string) => void;
   level: number;
@@ -11,9 +13,15 @@ interface AppContextType {
   setIsFaqShown: (value: boolean) => void;
   selectedRoles: string[];
   setSelectedRoles: (value: string[]) => void;
+  isClicked: boolean[];
+  setIsClicked: React.Dispatch<React.SetStateAction<boolean[]>>;
+  isFlipped: boolean[];
+  setIsFlipped: React.Dispatch<React.SetStateAction<boolean[]>>;
 }
 
 const defaultContextValue: AppContextType = {
+  isNameCardActive: false,
+  setIsNameCardActive: () => {},
   avatar: "",
   setAvatar: () => {},
   level: 0,
@@ -24,6 +32,10 @@ const defaultContextValue: AppContextType = {
   setIsFaqShown: () => {},
   selectedRoles: [],
   setSelectedRoles: () => {},
+  isClicked: [],
+  setIsClicked: () => {},
+  isFlipped: [],
+  setIsFlipped: () => {},
 };
 
 export const AppContext = createContext<AppContextType>(defaultContextValue);
@@ -34,10 +46,15 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [name, setName] = useState("anonymousCat");
   const [isFaqShown, setIsFaqShown] = useState(false);
   const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
+  const [isClicked, setIsClicked] = useState<boolean[]>(Array(6).fill(false));
+  const [isFlipped, setIsFlipped] = useState<boolean[]>(Array(6).fill(false));
+  const [isNameCardActive, setIsNameCardActive] = useState(false);
 
   return (
     <AppContext.Provider
       value={{
+        isNameCardActive,
+        setIsNameCardActive,
         avatar,
         setAvatar,
         level,
@@ -48,6 +65,10 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         setIsFaqShown,
         selectedRoles,
         setSelectedRoles,
+        isClicked,
+        setIsClicked,
+        isFlipped,
+        setIsFlipped,
       }}
     >
       {children}

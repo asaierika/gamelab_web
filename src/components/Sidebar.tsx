@@ -8,6 +8,10 @@ interface Props {
 const Sidebar = ({ activeTab, setActiveTab }: Props) => {
   return (
     <div className="sidebar">
+      <img
+        src={"/logo.png"}
+        style={{ width: "10rem", padding: "2rem 0 0 0" }}
+      ></img>
       <button
         className={activeTab === "overview" ? "active" : ""}
         onClick={() => setActiveTab("overview")}
@@ -32,13 +36,6 @@ const Sidebar = ({ activeTab, setActiveTab }: Props) => {
       >
         Awards
       </button>
-      <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-        <img
-          src={"/logo.png"}
-          style={{ width: "10rem", padding: "2rem 0 0 0" }}
-        ></img>
-        <button>ig</button>
-      </div>
     </div>
   );
 };

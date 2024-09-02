@@ -34,24 +34,26 @@ const Members = () => {
         members brings their unique skills and perspectives, contributing to a
         rich collaborative environment.
       </div>
-      <div className="role-container">
-        {roles.map((role, i) => (
-          <div className="role" key={role}>
-            <button
-              className={selectedRoles.includes(role) ? "active" : ""}
-              onClick={() => handleClick(role)}
-            >
-              <img src={images[i]}></img>
-              <div>{role}</div>
-              <div style={{ fontSize: "1rem" }}>{roleDescriptions[i]}</div>
-            </button>
+      <div className="row-container" style={{ gap: "2rem" }}>
+        <div className="column-container">
+          <img className="char-image" src={"/images/purple-cat.gif"}></img>
+          <div className="convo-bubble">
+            Which roles are you <br></br>interested in?
           </div>
-        ))}
-      </div>
-      <div className="convo-container">
-        <img src={"/images/purple-cat.png"}></img>
-        <div className="convo-bubble">
-          Which roles are you <br></br>interested in?
+        </div>
+        <div className="role-container">
+          {roles.map((role, i) => (
+            <div className="role" key={role}>
+              <button
+                className={selectedRoles.includes(role) ? "active" : ""}
+                onClick={() => handleClick(role)}
+              >
+                <img src={images[i]}></img>
+                <div>{role}</div>
+                <div style={{ fontSize: "1rem" }}>{roleDescriptions[i]}</div>
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>

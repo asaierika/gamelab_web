@@ -1,16 +1,33 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { AppContext } from "../AppContext.tsx";
 
 const NameCard = () => {
-  const { name } = useContext(AppContext);
-  const { selectedRoles } = useContext(AppContext);
-  const { avatar } = useContext(AppContext);
-  const { level } = useContext(AppContext);
+  const {
+    isNameCardActive,
+    setIsNameCardActive,
+    name,
+    selectedRoles,
+    avatar,
+    level,
+  } = useContext(AppContext);
+
+  const handleClick = () => {
+    setIsNameCardActive(true);
+  };
 
   return (
     <div className="name-card">
-      <div style={{ position: "absolute", top: "1rem", right: "1rem" }}>
-        <button>Join us!</button>
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          right: "1rem",
+          transform: "translateY(-50%)",
+        }}
+      >
+        <button className="light-button" onClick={() => handleClick}>
+          Join us!
+        </button>
       </div>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div className="avatar">
