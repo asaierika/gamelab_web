@@ -3,6 +3,10 @@ import { AppContext } from "../AppContext.tsx";
 
 const NameCard = () => {
   const {
+    hint,
+    setHint,
+    isSubmitted,
+    setIsSubmitted,
     isNameCardActive,
     setIsNameCardActive,
     name,
@@ -11,24 +15,31 @@ const NameCard = () => {
     level,
   } = useContext(AppContext);
 
-  const handleClick = () => {
+  const handleJoin = () => {
     setIsNameCardActive(true);
+  };
+
+  const handleCancel = () => {
+    setIsNameCardActive(false);
+  };
+
+  const handleSubmit = () => {
+    setIsSubmitted(true);
+    setIsNameCardActive(false);
+    setHint("Yay! You have submitted an application!");
   };
 
   return (
     <div className="name-card">
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "1rem",
-          transform: "translateY(-50%)",
-        }}
-      >
-        <button className="light-button" onClick={() => handleClick}>
+      {!isNameCardActive && !isSubmitted && (
+        <button
+          className="join-us-button light-button"
+          onClick={() => handleJoin()}
+        >
           Join us!
         </button>
-      </div>
+      )}
+
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div className="avatar">
           <img src={avatar}></img>
@@ -45,6 +56,38 @@ const NameCard = () => {
           </div>
         ))}
       </div>
+      {isNameCardActive && (
+        <div className="fade-in-slow input-container">
+          <div className="input-label-pair">
+            <label>school email:</label>
+            <input></input>
+          </div>
+          <div className="input-label-pair">
+            <label>interest(s):</label>
+            <input></input>
+          </div>
+          <div className="input-label-pair">
+            <label>portfolio link:</label>
+            <input></input>
+          </div>
+          <div
+            className="row-container"
+            style={{
+              position: "absolute",
+              bottom: "1rem",
+              right: "50%",
+              transform: "translateX(50%)",
+            }}
+          >
+            <button className="light-button" onClick={() => handleSubmit()}>
+              Submit
+            </button>
+            <button className="light-button" onClick={() => handleCancel()}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

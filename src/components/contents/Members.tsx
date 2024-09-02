@@ -2,7 +2,14 @@ import React, { useContext } from "react";
 import { AppContext } from "../../AppContext.tsx";
 
 const Members = () => {
-  const { selectedRoles, setSelectedRoles } = useContext(AppContext);
+  const {
+    setLevel,
+    setHint,
+    selectedRoles,
+    setSelectedRoles,
+    hasSelectedRoles,
+    setHasSelectedRoles,
+  } = useContext(AppContext);
   const roles = ["Coder", "Artist", "Musician", "Game Designer"];
   const roleDescriptions = [
     "Individuals with a knack for coding and game mechanics",
@@ -20,9 +27,21 @@ const Members = () => {
   const handleClick = (role: string) => {
     if (selectedRoles.includes(role)) {
       const updatedRoles = selectedRoles.filter((ele) => ele != role);
+      if (updatedRoles.length == 0) {
+        updatedRoles.push("Guest");
+      }
       setSelectedRoles(updatedRoles);
     } else {
-      setSelectedRoles([...selectedRoles, role]);
+      const updatedRoles = selectedRoles.filter((ele) => ele != "Guest");
+      setSelectedRoles([...updatedRoles, role]);
+    }
+
+    if (!hasSelectedRoles) {
+      setHasSelectedRoles(true);
+      setHint("You have selected a role!");
+      setLevel((prevLevel) => {
+        return prevLevel + 1;
+      });
     }
   };
   return (
@@ -35,12 +54,6 @@ const Members = () => {
         rich collaborative environment.
       </div>
       <div className="row-container" style={{ gap: "2rem" }}>
-        <div className="column-container">
-          <img className="char-image" src={"/images/purple-cat.gif"}></img>
-          <div className="convo-bubble">
-            Which roles are you <br></br>interested in?
-          </div>
-        </div>
         <div className="role-container">
           {roles.map((role, i) => (
             <div className="role" key={role}>
@@ -54,6 +67,12 @@ const Members = () => {
               </button>
             </div>
           ))}
+        </div>
+        <div className="column-container">
+          <div className="convo-bubble">
+            Which roles are you <br></br>interested in?
+          </div>
+          <img className="char-image" src={"/images/purple-cat.gif"}></img>
         </div>
       </div>
     </div>

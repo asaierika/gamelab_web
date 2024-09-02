@@ -6,18 +6,30 @@ interface Props {
 }
 
 const Sidebar = ({ activeTab, setActiveTab }: Props) => {
+  const titles = ["Overview", "Members", "Activities", "Awards"];
+  const tabs = ["overview", "members", "activities", "awards"];
   return (
     <div className="sidebar">
-      <img
-        src={"/logo.png"}
-        style={{ width: "10rem", padding: "2rem 0 0 0" }}
-      ></img>
-      <button
-        className={activeTab === "overview" ? "active" : ""}
-        onClick={() => setActiveTab("overview")}
-      >
-        Overview
-      </button>
+      {tabs.map((tab, i) => (
+        <div className="row-container" style={{ gap: "1rem" }}>
+          <button
+            className={activeTab === tab ? "active" : ""}
+            onClick={() => setActiveTab(tab)}
+          >
+            {titles[i]}
+          </button>
+        </div>
+      ))}
+      {/* <div className="row-container" style={{ gap: "1rem" }}>
+        <div className="circle"></div>
+        <button
+          className={activeTab === "overview" ? "active" : ""}
+          onClick={() => setActiveTab("overview")}
+        >
+          Overview
+        </button>
+      </div>
+
       <button
         className={activeTab === "members" ? "active" : ""}
         onClick={() => setActiveTab("members")}
@@ -35,7 +47,11 @@ const Sidebar = ({ activeTab, setActiveTab }: Props) => {
         onClick={() => setActiveTab("awards")}
       >
         Awards
-      </button>
+      </button> */}
+      <img
+        src={"/logo.png"}
+        style={{ width: "12rem", padding: "2rem 0" }}
+      ></img>
     </div>
   );
 };

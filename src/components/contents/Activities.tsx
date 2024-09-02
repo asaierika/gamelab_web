@@ -2,8 +2,14 @@ import React, { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
 
 const Activities = () => {
-  const { isClicked, setIsClicked, isFlipped, setIsFlipped } =
-    useContext(AppContext);
+  const {
+    setHint,
+    setLevel,
+    isClicked,
+    setIsClicked,
+    isFlipped,
+    setIsFlipped,
+  } = useContext(AppContext);
 
   const activities = [
     "Weekly Workshops",
@@ -31,6 +37,10 @@ const Activities = () => {
   ];
 
   const handleClick = (i: number) => {
+    setLevel((prevLevel) => {
+      return prevLevel + 1;
+    });
+    setHint("Activities unlocked!");
     isClicked.forEach((_, index) => {
       setTimeout(() => {
         let currIndex = (i + index) % 6;

@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
 import NameCard from "./components/NameCard";
+import HintBox from './components/HintBox';
 import './App.css'; 
 import { AppContext } from './AppContext';
 
@@ -17,6 +18,7 @@ function App() {
       <div className={`name-card-container ${isNameCardActive ? "active" : ""}`}>
         <NameCard></NameCard>
       </div>
+      <HintBox></HintBox>
     </div>
   );
 }

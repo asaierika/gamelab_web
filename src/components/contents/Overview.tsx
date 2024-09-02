@@ -2,7 +2,8 @@ import React, { useState, useContext } from "react";
 import { AppContext } from "../../AppContext.tsx";
 
 const Overview = () => {
-  const { isFaqShown, setIsFaqShown } = useContext(AppContext);
+  const { isFaqShown, setIsFaqShown, setHint, setLevel } =
+    useContext(AppContext);
   const [isClicked, setIsClicked] = useState(false);
   const questions = [
     "When was GameLab founded?",
@@ -14,13 +15,17 @@ const Overview = () => {
   const answers = [
     "We are a youg interest grouop founded in 2021.",
     "tudents with all experience levels are welcome!",
-    " We have over 200 members by the end of 2023, and are still growing!",
+    " We have over 50 members by the end of 2023, and are still growing!",
     "We provide a community where you can easily find like-minded people to start on a game!",
   ];
 
   const handleClick = () => {
     setIsClicked(true);
     setTimeout(() => setIsFaqShown(true), 500);
+    setHint("You have unlocked more questions!");
+    setLevel((prevLevel) => {
+      return prevLevel + 1;
+    });
   };
   return (
     <div>
