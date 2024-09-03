@@ -3,7 +3,6 @@ import Overview from "./contents/Overview.tsx";
 import Members from "./contents/Members.tsx";
 import Awards from "./contents/Awards.tsx";
 import Activities from "./contents/Activities.tsx";
-import NameCard from "./NameCard.tsx";
 
 interface Props {
   activeTab: any;

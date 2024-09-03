@@ -79,7 +79,7 @@ const Activities = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          paddingTop: "1rem",
+          paddingTop: "1em",
         }}
       >
         <div className="activities-container">

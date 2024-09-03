@@ -30,7 +30,7 @@ const Overview = () => {
   return (
     <div>
       <div className="heading">Overview</div>
-      <div className="content-text-box fade-in">
+      <div className="content-text-box fade-in" style={{ marginBottom: "5em" }}>
         <b>GameLab</b> is an engaging and dynamic school-based interest group
         dedicated to the art and science of game development. Established and
         driven by passionate student game developers, GameLab serves as a
@@ -49,21 +49,23 @@ const Overview = () => {
           ))}
         </div>
       ) : (
-        <div
-          className={isClicked ? "fade-out" : ""}
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img className="char-image" src={"/images/purple-cat-q.png"}></img>
+        <div>
+          <div
+            className={isClicked ? "fade-out" : ""}
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img className="char-image" src={"/images/purple-cat-q.png"}></img>
 
-          <button className="dark-button" onClick={handleClick}>
-            More questions?
-          </button>
+            <button className="dark-button" onClick={handleClick}>
+              More questions?
+            </button>
+          </div>
         </div>
       )}
     </div>

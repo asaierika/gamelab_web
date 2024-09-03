@@ -10,7 +10,7 @@ const Members = () => {
     hasSelectedRoles,
     setHasSelectedRoles,
   } = useContext(AppContext);
-  const roles = ["Coder", "Artist", "Musician", "Game Designer"];
+  const roles = ["Coder", "Artist", "Musician", "Designer"];
   const roleDescriptions = [
     "Individuals with a knack for coding and game mechanics",
     "Creative minds who bring games to life with stunning visuals",
@@ -53,7 +53,7 @@ const Members = () => {
         members brings their unique skills and perspectives, contributing to a
         rich collaborative environment.
       </div>
-      <div className="row-container" style={{ gap: "2rem" }}>
+      <div className="member-page-container">
         <div className="role-container">
           {roles.map((role, i) => (
             <div className="role" key={role}>
@@ -63,12 +63,12 @@ const Members = () => {
               >
                 <img src={images[i]}></img>
                 <div>{role}</div>
-                <div style={{ fontSize: "1rem" }}>{roleDescriptions[i]}</div>
+                <div style={{ fontSize: "1em" }}>{roleDescriptions[i]}</div>
               </button>
             </div>
           ))}
         </div>
-        <div className="column-container">
+        <div className="convo-container">
           <div className="convo-bubble">
             Which roles are you <br></br>interested in?
           </div>

@@ -7,12 +7,11 @@ const HintBox = () => {
 
   useEffect(() => {
     if (hint !== "") {
+      console.log("hint");
       setAnimationClass("fade-in-fade-out");
-
       const timer = setTimeout(() => {
         setAnimationClass("transparent");
       }, 3000);
-
       return () => clearTimeout(timer);
     }
   }, [hint]);
