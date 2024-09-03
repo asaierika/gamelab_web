@@ -1,8 +1,9 @@
-# React + Vite
+# GameLab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A website designated to generate interest in GameLab, a mock school interest group. Entry for New Type Works Hacks. Since GameLab is a game development club, the webpage is designed in such a way that it mimics the mechanism of a simple game - the users can interact with the UI and level up as they explore about GameLab.
 
-Currently, two official plugins are available:
+An on-going project.
+**Warning: This website is not currently optimized for mobile devices.**  
+Some features and layouts may not display correctly on smaller screens.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Try it out: https://gamelab-web-tau.vercel.app
